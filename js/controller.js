@@ -52,14 +52,15 @@ angular.module('starter.controllers', ['ionic'])
             })
 
 .controller('loginCtrl', function($scope, $http, $ionicPopup, $window) {
-            $scope.sw = $window.width;
-            $scope.sh = $window.height;
+            $scope.sw = angular.element($window).width;
+            $scope.sh = angular.element($window).height;
             if($scope.sh>$scope.sw){
               alert("12");
               $scope.wi = "{'height':'100%','width':'100%'}";
               // $scope.he = "100%";
             }
             else{
+              alert("21");
               $scope.wi = "{'height':'0%','width':'0%'}";
               //  $scope.wi = "20%";
               // $scope.he = "30%";
