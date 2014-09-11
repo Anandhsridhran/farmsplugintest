@@ -51,7 +51,17 @@ angular.module('starter.controllers', ['ionic'])
 
             })
 
-.controller('loginCtrl', function($scope, $http, $ionicPopup) {
+.controller('loginCtrl', function($scope, $http, $ionicPopup, $window) {
+            $scope.sw = $window.width;
+            $scope.sh = $window.height;
+            if($scope.sh>$scope.sw){
+              $scope.wi = "30%";
+              $scope.he = "20%";
+            }
+            else{
+               $scope.wi = "20%";
+              $scope.he = "30%";
+            }
             $scope.tes = "Log In";
             $scope.mid = window.localStorage['dev_id'];
            alert($scope.mid);
