@@ -124,125 +124,125 @@ angular.module('starter.services', [])
          }
          function createfarm(tx)
          {
-         // tx.executeSql('DROP TABLE IF EXISTS farms');
-         // tx.executeSql('DROP TABLE IF EXISTS sites');
-         // tx.executeSql('DROP TABLE IF EXISTS barns');
-         // tx.executeSql('DROP TABLE IF EXISTS readings');
+         tx.executeSql('DROP TABLE IF EXISTS farms');
+         tx.executeSql('DROP TABLE IF EXISTS sites');
+         tx.executeSql('DROP TABLE IF EXISTS barns');
+         tx.executeSql('DROP TABLE IF EXISTS readings');
          tx.executeSql('CREATE TABLE IF NOT EXISTS readings (`barn_id` ,`barn_name`, `temperatures`, `humidity`, `status`, `AC_power`, `ir_feeds`,`reported_at`)');
-         // tx.executeSql('CREATE TABLE IF NOT EXISTS farms (`farm_id` ,`fname`, `fsystem_status`, `fstreet_address`, `fcity`, `fstate`, `fpostal_code`)');
-         // tx.executeSql('CREATE TABLE IF NOT EXISTS sites (`location_id` ,`lname`, `lsystem_status`, `lstreet_address`, `lcity`, `lstate`, `lpostal_code`, `lfarm_id`)');
-         // tx.executeSql('CREATE TABLE IF NOT EXISTS barns (`barn_id` ,`bname`, `blocation_id`, `btotalpigs`)');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS farms (`farm_id` ,`fname`, `fsystem_status`, `fstreet_address`, `fcity`, `fstate`, `fpostal_code`)');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS sites (`location_id` ,`lname`, `lsystem_status`, `lstreet_address`, `lcity`, `lstate`, `lpostal_code`, `lfarm_id`)');
+         tx.executeSql('CREATE TABLE IF NOT EXISTS barns (`barn_id` ,`bname`, `blocation_id`, `btotalpigs`)');
          alert("db");
-         // for (var index=0; index<farms.length; index++)
-         // {
-         // tx.executeSql('INSERT INTO farms (farm_id, fname, fsystem_status, fstreet_address, fcity, fstate, fpostal_code) VALUES (?, ?, ?, ?, ?, ?, ?)',
-         //               [farms[index].farm_id,farms[index].name,farms[index].system_status,farms[index].street_address,farms[index].city,farms[index].state,farms[index].postal_code]);
-         // }
+         for (var index=0; index<farms.length; index++)
+         {
+         tx.executeSql('INSERT INTO farms (farm_id, fname, fsystem_status, fstreet_address, fcity, fstate, fpostal_code) VALUES (?, ?, ?, ?, ?, ?, ?)',
+                       [farms[index].farm_id,farms[index].name,farms[index].system_status,farms[index].street_address,farms[index].city,farms[index].state,farms[index].postal_code]);
+         }
          
-         // for (var index=0; index<sites.length; index++)
-         // {
-         // tx.executeSql('INSERT INTO sites (location_id, lname, lsystem_status, lstreet_address, lcity, lstate, lpostal_code, lfarm_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-         //               [sites[index].location_id,sites[index].name,sites[index].system_status,sites[index].street_address,sites[index].city,sites[index].state,sites[index].postal_code,sites[index].farm_id]);
-         // }
+         for (var index=0; index<sites.length; index++)
+         {
+         tx.executeSql('INSERT INTO sites (location_id, lname, lsystem_status, lstreet_address, lcity, lstate, lpostal_code, lfarm_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                       [sites[index].location_id,sites[index].name,sites[index].system_status,sites[index].street_address,sites[index].city,sites[index].state,sites[index].postal_code,sites[index].farm_id]);
+         }
          
-         // for (var index=0; index<barns.length; index++)
-         // {
-         // tx.executeSql('INSERT INTO barns (barn_id, bname, blocation_id, btotalpigs) VALUES (?, ?, ?, ?)',
-         //               [barns[index].id,barns[index].name,barns[index].location_id,barns[index].total_pigs]);
-         // }
+         for (var index=0; index<barns.length; index++)
+         {
+         tx.executeSql('INSERT INTO barns (barn_id, bname, blocation_id, btotalpigs) VALUES (?, ?, ?, ?)',
+                       [barns[index].id,barns[index].name,barns[index].location_id,barns[index].total_pigs]);
+         }
          
-         // for (var index=0; index<reading.length; index++)
-         // {
+         for (var index=0; index<reading.length; index++)
+         {
 
-         // var idb = ids[index];
-         // var data = reading;
+         var idb = ids[index];
+         var data = reading;
                  
-         // if (data[index] == "null" || data[index] == null || data[index] == undefined || data[index] == ""){
-         // var barn_name = "NA";
-         // var temperatures = "NA";
-         // var humidity = "NA";
-         // var system_status = "NA";
-         // var AC_power = "NA";
-         // var ir_feeds = "NA";
-         // var reported_at ="NA";
-         // }
-         // else{
-         // if(data[index].temperatures == null || data[index].temperatures == undefined || data[index].temperatures[0] == undefined  ){
-         // var temperatures = "NA";
-         // }
-         // else{
-         // var temperatures = data[index].temperatures[0].value;
-         // }
-         // var barn_name = data[index].barn_name;
-         // if(data[index].humidity == null || data[index].humidity == undefined){
-         // var humidity = "NA";
-         // }
-         // else{
-         // var humidity = data[index].humidity;
-         // }
-         // if(data[index].system_status == null || data[index].system_status == undefined){
-         // var system_status = "NA";
-         // }
-         // else{
-         // var system_status = data[index].system_status;
-         // }
-         // //         alert("2c");
-         // if(data[index].AC_power == null || data[index].AC_power == undefined){
-         // var AC_power = "NA";
-         // }
-         // else{
-         // var AC_power = data[index].AC_power;
-         // }
-         // if(data[index].reported_at == null || data[index].reported_at == undefined){
-         // var reported_at = "NA";
-         // }
-         // else{
-         // var reported_at = data[index].reported_at;
-         // }
-         // if(data[index].ir_feeds == null || data[index].ir_feeds == undefined || data[index].ir_feeds[0] == undefined  ){
-         // var ir_feeds = 0;
-         // }
-         // else{
-         // var ir_feeds = data[index].ir_feeds[0].value;
-         // }
-         // }
-         // tx.executeSql('INSERT INTO readings (barn_id, barn_name, temperatures, humidity, status, AC_power, ir_feeds, reported_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-         //               [idb,barn_name,temperatures,humidity,system_status,AC_power,ir_feeds,reported_at]);
-         // alert("rokie");
-         // }
-         // tx.executeSql('SELECT * FROM farms', [], function(tx,results)
-         //               {
-         //               fa1 = [];
-         //               var len = results.rows.length;
-         //               alert(len + results);
-         //               for(var c=0; c<len; c++){
-         //               fa1.push(results.rows.item(c))
-         //               alert(results.rows.item(c));
-         //               }
-         //               });
-         // tx.executeSql('SELECT * FROM sites', [], function(tx,results){
-         //               si = [];
-         //               var len = results.rows.length;
-         //               for(var c=0; c<len; c++){
-         //               si.push(results.rows.item(c))
-         //               }
-         //               });
-         // tx.executeSql('SELECT * FROM barns', [], function(tx,results)
-         //               {
-         //               ba = [];
-         //               var len = results.rows.length;
-         //               for(var c=0; c<len; c++){
-         //               ba.push(results.rows.item(c))
-         //               }
-         //               });
-         // tx.executeSql('SELECT * FROM readings', [], function(tx,results)
-         //               {
-         //               ra = [];
-         //               var len = results.rows.length;
-         //               for(var c=0; c<len; c++){
-         //               ra.push(results.rows.item(c))
-         //               }
-         //               });
+         if (data[index] == "null" || data[index] == null || data[index] == undefined || data[index] == ""){
+         var barn_name = "NA";
+         var temperatures = "NA";
+         var humidity = "NA";
+         var system_status = "NA";
+         var AC_power = "NA";
+         var ir_feeds = "NA";
+         var reported_at ="NA";
+         }
+         else{
+         if(data[index].temperatures == null || data[index].temperatures == undefined || data[index].temperatures[0] == undefined  ){
+         var temperatures = "NA";
+         }
+         else{
+         var temperatures = data[index].temperatures[0].value;
+         }
+         var barn_name = data[index].barn_name;
+         if(data[index].humidity == null || data[index].humidity == undefined){
+         var humidity = "NA";
+         }
+         else{
+         var humidity = data[index].humidity;
+         }
+         if(data[index].system_status == null || data[index].system_status == undefined){
+         var system_status = "NA";
+         }
+         else{
+         var system_status = data[index].system_status;
+         }
+         //         alert("2c");
+         if(data[index].AC_power == null || data[index].AC_power == undefined){
+         var AC_power = "NA";
+         }
+         else{
+         var AC_power = data[index].AC_power;
+         }
+         if(data[index].reported_at == null || data[index].reported_at == undefined){
+         var reported_at = "NA";
+         }
+         else{
+         var reported_at = data[index].reported_at;
+         }
+         if(data[index].ir_feeds == null || data[index].ir_feeds == undefined || data[index].ir_feeds[0] == undefined  ){
+         var ir_feeds = 0;
+         }
+         else{
+         var ir_feeds = data[index].ir_feeds[0].value;
+         }
+         }
+         tx.executeSql('INSERT INTO readings (barn_id, barn_name, temperatures, humidity, status, AC_power, ir_feeds, reported_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                       [idb,barn_name,temperatures,humidity,system_status,AC_power,ir_feeds,reported_at]);
+         alert("rokie");
+         }
+         tx.executeSql('SELECT * FROM farms', [], function(tx,results)
+                       {
+                       fa1 = [];
+                       var len = results.rows.length;
+                       alert(len + results);
+                       for(var c=0; c<len; c++){
+                       fa1.push(results.rows.item(c))
+                       alert(results.rows.item(c));
+                       }
+                       });
+         tx.executeSql('SELECT * FROM sites', [], function(tx,results){
+                       si = [];
+                       var len = results.rows.length;
+                       for(var c=0; c<len; c++){
+                       si.push(results.rows.item(c))
+                       }
+                       });
+         tx.executeSql('SELECT * FROM barns', [], function(tx,results)
+                       {
+                       ba = [];
+                       var len = results.rows.length;
+                       for(var c=0; c<len; c++){
+                       ba.push(results.rows.item(c))
+                       }
+                       });
+         tx.executeSql('SELECT * FROM readings', [], function(tx,results)
+                       {
+                       ra = [];
+                       var len = results.rows.length;
+                       for(var c=0; c<len; c++){
+                       ra.push(results.rows.item(c))
+                       }
+                       });
          }
          
          function errorHandler(error)
