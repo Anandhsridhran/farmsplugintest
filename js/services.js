@@ -216,6 +216,7 @@ angular.module('starter.services', [])
          }
          tx.executeSql('INSERT INTO readings (barn_id, barn_name, temperatures, humidity, status, AC_power, ir_feeds, reported_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
                        [idb,barn_name,temperatures,humidity,system_status,AC_power,ir_feeds,reported_at]);
+         alert("rokie");
          }
          tx.executeSql('SELECT * FROM farms', [], function(tx,results)
                        {
