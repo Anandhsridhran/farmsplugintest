@@ -161,7 +161,7 @@ angular.module('starter.services', [])
          //         alert("1");
          var idb = ids[index];
          var data = reading;
-                 alert(JSON.stringify(data[index]))
+                 // alert(JSON.stringify(data[index]))
          //         alert(JSON.stringify(data[index].temperatures));
          
          //         alert(d);
@@ -221,9 +221,10 @@ angular.module('starter.services', [])
                        {
                        fa1 = [];
                        var len = results.rows.length;
+                       alert(len + results);
                        for(var c=0; c<len; c++){
                        fa1.push(results.rows.item(c))
-                       alert(fa1);
+                       alert(results.rows.item(c));
                        }
                        });
          tx.executeSql('SELECT * FROM sites', [], function(tx,results){
