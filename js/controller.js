@@ -55,8 +55,8 @@ angular.module('starter.controllers', ['ionic'])
             $scope.sw = $window.width;
             $scope.sh = $window.height;
             if($scope.sh>$scope.sw){
-              $scope.wi = "30%";
-              $scope.he = "20%";
+              $scope.wi = "100%";
+              $scope.he = "100%";
             }
             else{
                $scope.wi = "20%";
