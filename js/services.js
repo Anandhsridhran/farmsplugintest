@@ -119,7 +119,7 @@ angular.module('starter.services', [])
          createDatabase();
          }
          function createDatabase() {
-//         alert("Data Sync");
+        alert("Data Sync");
          createDB.transaction(createfarm, errorHandler, successHandler);
          }
          function createfarm(tx)
@@ -161,7 +161,7 @@ angular.module('starter.services', [])
          //         alert("1");
          var idb = ids[index];
          var data = reading;
-         //         alert(JSON.stringify(data[index]))
+                 alert(JSON.stringify(data[index]))
          //         alert(JSON.stringify(data[index].temperatures));
          
          //         alert(d);
@@ -223,6 +223,7 @@ angular.module('starter.services', [])
                        var len = results.rows.length;
                        for(var c=0; c<len; c++){
                        fa1.push(results.rows.item(c))
+                       alert(fa1);
                        }
                        });
          tx.executeSql('SELECT * FROM sites', [], function(tx,results){
@@ -257,6 +258,7 @@ angular.module('starter.services', [])
          
          function successHandler()
          {
+            alert("done");
          if(window.localStorage['role']=="BarnManager")
          {
          location.href = '#/app/barnmanager/'+window.localStorage['barn_id']+'/'+window.localStorage['barn_id']+'/'+window.localStorage['location']+'/'+window.localStorage['farm'];
