@@ -11,5 +11,5 @@
     <access origin="*" />
     <preference name="fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
-    <gap:plugin name="com.adobe.plugins.pushplugin" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
 </widget>
