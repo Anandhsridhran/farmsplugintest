@@ -54,7 +54,7 @@ angular.module('starter.controllers', ['ionic'])
 .controller('loginCtrl', function($scope, $http, $ionicPopup) {
             $scope.tes = "Log In";
             $scope.mid = window.localStorage['dev_id'];
-//            alert($scope.token)
+           alert($scope.mid);
 //            if(window.localStorage['login_token']==""|window.localStorage['login_token']==null|window.localStorage['login_token']==undefined){
             $scope.butcolor = "rgb(145,165,211)";
             var logdata=[];
@@ -105,7 +105,7 @@ angular.module('starter.controllers', ['ionic'])
                         $scope.tes = "Log In";
                         $scope.click = false;
                         $ionicPopup.alert({
-                                          title: 'Invalid username or password',
+                                          title: data,
                                           template: '',
                                           buttons:[{text:"OK",type:"button button-clear button-positive"}]
                                           
