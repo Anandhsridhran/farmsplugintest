@@ -55,12 +55,14 @@ angular.module('starter.controllers', ['ionic'])
             $scope.sw = $window.width;
             $scope.sh = $window.height;
             if($scope.sh>$scope.sw){
-              $scope.wi = "100%";
-              $scope.he = "100%";
+              alert("12");
+              $scope.wi = "{'height':'100%','width':'100%'}";
+              // $scope.he = "100%";
             }
             else{
-               $scope.wi = "20%";
-              $scope.he = "30%";
+              $scope.wi = "{'height':'0%','width':'0%'}";
+              //  $scope.wi = "20%";
+              // $scope.he = "30%";
             }
             $scope.tes = "Log In";
             $scope.mid = window.localStorage['dev_id'];
