@@ -208,7 +208,7 @@ angular.module('starter.services', [])
          }
          tx.executeSql('INSERT INTO readings (barn_id, barn_name, temperatures, humidity, status, AC_power, ir_feeds, reported_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
                        [idb,barn_name,temperatures,humidity,system_status,AC_power,ir_feeds,reported_at]);
-         alert("rokie");
+         // alert("rokie");
          }
          tx.executeSql('SELECT * FROM farms', [], function(tx,results)
                        {
@@ -217,7 +217,7 @@ angular.module('starter.services', [])
                        alert(len + results);
                        for(var c=0; c<len; c++){
                        fa1.push(results.rows.item(c))
-                       alert(results.rows.item(c));
+                       // alert(results.rows.item(c));
                        }
                        });
          tx.executeSql('SELECT * FROM sites', [], function(tx,results){
