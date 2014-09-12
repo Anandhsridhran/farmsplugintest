@@ -55,6 +55,11 @@ angular.module('starter.controllers', ['ionic'])
             $scope.sw = angular.element($window).width;
             $scope.sh = angular.element($window).height;
             // $scope.wi = "{'height':'0%','width':'0%'}";
+            $scope.$watch(function(){
+                 return $window.innerWidth;
+              }, function(value) {
+                 alert(value);
+             });
             if($scope.sh>$scope.sw){
               alert("12");
               $scope.wi = "{'height':'40%','width':'30%','margin-top':'10%'}";
@@ -1579,17 +1584,17 @@ angular.module('starter.controllers', ['ionic'])
           };
           })
 
-.directive('resize', function(){
-  return{
-    function ale(){
-      $scope.$watch(function(){
-         return window.innerWidth;
-      }, function(value) {
-              alert(value);
-        });
-    }
-  };
-})
+// .directive('resize', function(){
+//   return{
+//     function ale(){
+//       $scope.$watch(function(){
+//          return window.innerWidth;
+//       }, function(value) {
+//               alert(value);
+//         });
+//     }
+//   };
+// })
 .filter('reverse', function() {
        return function(items) {
        return items.slice().reverse();
