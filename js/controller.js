@@ -1587,13 +1587,14 @@ angular.module('starter.controllers', ['ionic'])
 .directive('resize', function ($window) {
     return function (scope, element) {
         var w = angular.element($window);
+        alert("1");
         scope.getWindowDimensions = function () {
             return { 'h': w.height(), 'w': w.width() };
         };
         scope.$watch(scope.getWindowDimensions, function (newValue, oldValue) {
             scope.windowHeight = newValue.h;
             scope.windowWidth = newValue.w;
-            alert(newValue.h);
+            alert("23123");
             scope.style = function () {
                 return { 
                     'height': (newValue.h - 100) + 'px',
