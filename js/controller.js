@@ -57,28 +57,14 @@ angular.module('starter.controllers', ['ionic'])
             $scope.sh = $window.innerHeight;
             alert($scope.sh);
               if($scope.sh>$scope.sw){
-              alert("12");
-              $scope.wi = "{'height':'40%','width':'30%','margin-top':'10%'}";
+              // alert("12");
+              $scope.wi = "{'height':'50%','width':'40%','margin-top':'10%'}";
             }
             else{
-              $scope.wi = "{'height':'30%','width':'40%','margin-top':'10%'}";
+              $scope.wi = "{'height':'10%','width':'10%','margin-top':'10%'}";
             }
-                // console.log("tellAngular call");
-                // var domElt = document.getElementById('someDiv');
-                // scope = angular.element(domElt).scope();
-                // scope.$apply(function() {
-                //     scope.width = window.innerWidth;
-                //     scope.height = window.innerHeight;
-                // });
             }
-
-            //first call of tellAngular when the dom is loaded
-            // document.addEventListener("DOMContentLoaded", tellAngular, false);
-
-            //calling tellAngular on resize event
             window.onresize = tellAngular;
-
-            
             $scope.tes = "Log In";
             $scope.mid = window.localStorage['dev_id'];
            alert($scope.mid);
