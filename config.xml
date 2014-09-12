@@ -24,14 +24,14 @@
         id        = "com.phonegap.hello-world"
         version   = "1.0.0">
 
-    <name>Test Plugin</name>
+    <name>Farm Assist</name>
 
     <description>
-        Hello World sample application with Pushwoosh Phonegap push notifications plugin integrated
+        Application to maintain farms.
     </description>
 
-    <author href="http://pushwoosh.com" email="support@pushwoosh.com">
-        Pushwoosh
+    <author href="http://amfnano.com" email="support@amfnano.com">
+        AMF Nano
     </author>
 
     <!-- current version of PhoneGap -->
@@ -63,7 +63,7 @@
     <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
     <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
-    <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+    <preference name="android-minSdkVersion"      value="5" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
     <!-- <gap:plugin name="com.pushwoosh.plugins.pushwoosh" version="3.0.2" /> -->
     <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.1.1" />
