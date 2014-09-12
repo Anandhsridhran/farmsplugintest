@@ -57,12 +57,12 @@ angular.module('starter.controllers', ['ionic'])
             // $scope.wi = "{'height':'0%','width':'0%'}";
             if($scope.sh>$scope.sw){
               alert("12");
-              $scope.wi = "{'height':'20%','width':'30%'}";
+              $scope.wi = "{'height':'40%','width':'30%','margin-top':'10%'}";
               // $scope.he = "100%";
             }
             else{
               alert("21");
-              $scope.wi = "{'height':'30%','width':'20%'}";
+              $scope.wi = "{'height':'30%','width':'40%','margin-top':'10%'}";
               //  $scope.wi = "20%";
               // $scope.he = "30%";
             }
