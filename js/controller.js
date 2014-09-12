@@ -58,17 +58,17 @@ angular.module('starter.controllers', ['ionic'])
               $scope.wi = "{'height':'50%','width':'40%','margin-top':'10%'}";
             }
             else{
-              $scope.wi = "{'height':'10%','width':'10%','margin-top':'10%'}";
+              $scope.wi = "{'height':'30%','width':'40%','margin-top':'10%'}";
             }
            function tellAngular() {
             $scope.sw = $window.innerWidth;
             $scope.sh = $window.innerHeight;
-            alert($scope.sh);
+            // alert($scope.sh);
               if($scope.sh>$scope.sw){
               $scope.wi = "{'height':'50%','width':'40%','margin-top':'10%'}";
             }
             else{
-              $scope.wi = "{'height':'10%','width':'10%','margin-top':'10%'}";
+              $scope.wi = "{'height':'30%','width':'40%','margin-top':'10%'}";
             }
             }
             window.onresize = tellAngular;
@@ -148,28 +148,32 @@ angular.module('starter.controllers', ['ionic'])
 .controller('loadCtrl', function($scope, $stateParams, app) {
             
             })
-.controller('setCtrl', function($scope, $stateParams, db) {
-            $scope.sync = db.sync();
+.controller('setCtrl', function($scope, $stateParams, db, $window) {
             $scope.sw = $window.innerWidth;
             $scope.sh = $window.innerHeight;
            if($scope.sh>$scope.sw){
-              $scope.wi = "{'height':'50%','width':'40%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+              $scope.img = "{'height':'50%','width':'40%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+              $scope.lod = "{'height':'10%','width':'20%','margin-top':'40%','margin-left':'40%','margin-right':'40%'}";
             }
             else{
-              $scope.wi = "{'height':'10%','width':'10%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+              $scope.img = "{'height':'10%','width':'10%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+              $scope.lod = "{'height':'20%','width':'10%','margin-top':'40%','margin-left':'40%','margin-right':'40%'}";
             }
            function tellAngular() {
             $scope.sw = $window.innerWidth;
             $scope.sh = $window.innerHeight;
-            alert($scope.sh);
+            // alert($scope.sh);
               if($scope.sh>$scope.sw){
-              $scope.wi = "{'height':'50%','width':'40%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+              $scope.img = "{'height':'50%','width':'40%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+              $scope.lod = "{'height':'10%','width':'20%','margin-top':'40%','margin-left':'40%','margin-right':'40%'}";
             }
             else{
-              $scope.wi = "{'height':'10%','width':'10%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+              $scope.img = "{'height':'10%','width':'10%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+              $scope.lod = "{'height':'20%','width':'10%','margin-top':'40%','margin-left':'40%','margin-right':'40%'}";
             }
             }
             window.onresize = tellAngular;           
+            $scope.sync = db.sync();
             })
 .controller('dashCtrl', function($scope, $http,$timeout, $ionicLoading,$ionicPopup) {
             
