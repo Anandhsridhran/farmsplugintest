@@ -74,7 +74,7 @@ angular.module('starter.controllers', ['ionic'])
             window.onresize = tellAngular;
             $scope.tes = "Log In";
             $scope.mid = window.localStorage['dev_id'];
-           alert($scope.mid);
+           // alert($scope.mid);
 //            if(window.localStorage['login_token']==""|window.localStorage['login_token']==null|window.localStorage['login_token']==undefined){
             $scope.butcolor = "rgb(145,165,211)";
             var logdata=[];
