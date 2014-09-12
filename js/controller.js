@@ -55,11 +55,11 @@ angular.module('starter.controllers', ['ionic'])
             $scope.sw = angular.element($window).width;
             $scope.sh = angular.element($window).height;
             // $scope.wi = "{'height':'0%','width':'0%'}";
-            $scope.$watch(function(){
-                 return $window.innerWidth;
-              }, function(value) {
-                 alert(value);
-             });
+            // $scope.$watch(function(){
+            //      return $window.innerWidth;
+            //   }, function(value) {
+            //      alert(value);
+            //  });
             if($scope.sh>$scope.sw){
               alert("12");
               $scope.wi = "{'height':'40%','width':'30%','margin-top':'10%'}";
@@ -1584,6 +1584,30 @@ angular.module('starter.controllers', ['ionic'])
           };
           })
 
+.directive('resize', function ($window) {
+    return function (scope, element) {
+        var w = angular.element($window);
+        scope.getWindowDimensions = function () {
+            return { 'h': w.height(), 'w': w.width() };
+        };
+        scope.$watch(scope.getWindowDimensions, function (newValue, oldValue) {
+            scope.windowHeight = newValue.h;
+            scope.windowWidth = newValue.w;
+            alert(newValue.h);
+            scope.style = function () {
+                return { 
+                    'height': (newValue.h - 100) + 'px',
+                    'width': (newValue.w - 100) + 'px' 
+                };
+            };
+
+        }, true);
+
+        w.bind('resize', function () {
+            scope.$apply();
+        });
+    }
+})
 // .directive('resize', function(){
 //   return{
 //     function ale(){
