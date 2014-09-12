@@ -52,26 +52,10 @@ angular.module('starter.controllers', ['ionic'])
             })
 
 .controller('loginCtrl', function($scope, $http, $ionicPopup, $window) {
-            $scope.sw = angular.element($window).width;
-            $scope.sh = angular.element($window).height;
+            $scope.sw = window.width;
+            $scope.sh = window.height;
            function tellAngular() {
-              alert("123 123");
-                // console.log("tellAngular call");
-                // var domElt = document.getElementById('someDiv');
-                // scope = angular.element(domElt).scope();
-                // scope.$apply(function() {
-                //     scope.width = window.innerWidth;
-                //     scope.height = window.innerHeight;
-                // });
-            }
-
-            //first call of tellAngular when the dom is loaded
-            document.addEventListener("DOMContentLoaded", tellAngular, false);
-
-            //calling tellAngular on resize event
-            window.onresize = tellAngular;
-
-            if($scope.sh>$scope.sw){
+              if($scope.sh>$scope.sw){
               alert("12");
               $scope.wi = "{'height':'40%','width':'30%','margin-top':'10%'}";
               // $scope.he = "100%";
@@ -82,6 +66,22 @@ angular.module('starter.controllers', ['ionic'])
               //  $scope.wi = "20%";
               // $scope.he = "30%";
             }
+                // console.log("tellAngular call");
+                // var domElt = document.getElementById('someDiv');
+                // scope = angular.element(domElt).scope();
+                // scope.$apply(function() {
+                //     scope.width = window.innerWidth;
+                //     scope.height = window.innerHeight;
+                // });
+            }
+
+            //first call of tellAngular when the dom is loaded
+            // document.addEventListener("DOMContentLoaded", tellAngular, false);
+
+            //calling tellAngular on resize event
+            window.onresize = tellAngular;
+
+            
             $scope.tes = "Log In";
             $scope.mid = window.localStorage['dev_id'];
            alert($scope.mid);
