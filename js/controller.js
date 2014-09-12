@@ -1578,6 +1578,18 @@ angular.module('starter.controllers', ['ionic'])
           }
           };
           })
+
+.directive('resize', function(){
+  return{
+    function ale(){
+      $scope.$watch(function(){
+         return window.innerWidth;
+      }, function(value) {
+              alert(value);
+        });
+    }
+  };
+})
 .filter('reverse', function() {
        return function(items) {
        return items.slice().reverse();
