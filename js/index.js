@@ -35,12 +35,8 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        document.addEventListener("backbutton", onBackKeyDown, false);
     },
-    onBackKeyDown : function(){
-        alert('back');
-        return false;
-    },
+    
     // Update DOM on a Received Event
     receivedEvent: function(id) {
          var pushNotification = window.plugins.pushNotification;
