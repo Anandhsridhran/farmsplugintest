@@ -54,12 +54,23 @@ angular.module('starter.controllers', ['ionic'])
 .controller('loginCtrl', function($scope, $http, $ionicPopup, $window) {
             $scope.sw = angular.element($window).width;
             $scope.sh = angular.element($window).height;
-            // $scope.wi = "{'height':'0%','width':'0%'}";
-            // $scope.$watch(function(){
-            //      return $window.innerWidth;
-            //   }, function(value) {
-            //      alert(value);
-            //  });
+           function tellAngular() {
+              alert("123 123");
+                // console.log("tellAngular call");
+                // var domElt = document.getElementById('someDiv');
+                // scope = angular.element(domElt).scope();
+                // scope.$apply(function() {
+                //     scope.width = window.innerWidth;
+                //     scope.height = window.innerHeight;
+                // });
+            }
+
+            //first call of tellAngular when the dom is loaded
+            document.addEventListener("DOMContentLoaded", tellAngular, false);
+
+            //calling tellAngular on resize event
+            window.onresize = tellAngular;
+
             if($scope.sh>$scope.sw){
               alert("12");
               $scope.wi = "{'height':'40%','width':'30%','margin-top':'10%'}";
@@ -1584,31 +1595,33 @@ angular.module('starter.controllers', ['ionic'])
           };
           })
 
-.directive('resize', function ($window) {
-    return function (scope, element) {
-        var w = angular.element($window);
-        alert("1");
-        scope.getWindowDimensions = function () {
-            return { 'h': w.height(), 'w': w.width() };
-        };
-        scope.$watch(scope.getWindowDimensions, function (newValue, oldValue) {
-            scope.windowHeight = newValue.h;
-            scope.windowWidth = newValue.w;
-            alert("23123");
-            scope.style = function () {
-                return { 
-                    'height': (newValue.h - 100) + 'px',
-                    'width': (newValue.w - 100) + 'px' 
-                };
-            };
+// .directive('resize', function ($window) {
+//     return function (scope, element) {
+//         var w = angular.element($window);
+//         alert("1");
+//         scope.getWindowDimensions = function () {
+//             return { 'h': w.height(), 'w': w.width() };
+//         };
+//         scope.$watch(scope.getWindowDimensions, function (newValue, oldValue) {
+//             scope.windowHeight = newValue.h;
+//             scope.windowWidth = newValue.w;
+//             alert("23123");
+//             scope.style = function () {
+//                 return { 
+//                     'height': (newValue.h - 100) + 'px',
+//                     'width': (newValue.w - 100) + 'px' 
+//                 };
+//             };
 
-        }, true);
+//         }, true);
 
-        w.bind('resize', function () {
-            scope.$apply();
-        });
-    }
-})
+//         w.bind('resize', function () {
+//             scope.$apply();
+//         });
+//     }
+// })
+
+
 // .directive('resize', function(){
 //   return{
 //     function ale(){
