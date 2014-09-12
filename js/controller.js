@@ -52,12 +52,19 @@ angular.module('starter.controllers', ['ionic'])
             })
 
 .controller('loginCtrl', function($scope, $http, $ionicPopup, $window) {
+           $scope.sw = $window.innerWidth;
+            $scope.sh = $window.innerHeight;
+           if($scope.sh>$scope.sw){
+              $scope.wi = "{'height':'50%','width':'40%','margin-top':'10%'}";
+            }
+            else{
+              $scope.wi = "{'height':'10%','width':'10%','margin-top':'10%'}";
+            }
            function tellAngular() {
             $scope.sw = $window.innerWidth;
             $scope.sh = $window.innerHeight;
             alert($scope.sh);
               if($scope.sh>$scope.sw){
-              // alert("12");
               $scope.wi = "{'height':'50%','width':'40%','margin-top':'10%'}";
             }
             else{
@@ -143,10 +150,26 @@ angular.module('starter.controllers', ['ionic'])
             })
 .controller('setCtrl', function($scope, $stateParams, db) {
             $scope.sync = db.sync();
-//            alert(db.successHandler());
-//            function sync(){
-//            db.createDatabase();
-//            }
+            $scope.sw = $window.innerWidth;
+            $scope.sh = $window.innerHeight;
+           if($scope.sh>$scope.sw){
+              $scope.wi = "{'height':'50%','width':'40%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+            }
+            else{
+              $scope.wi = "{'height':'10%','width':'10%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+            }
+           function tellAngular() {
+            $scope.sw = $window.innerWidth;
+            $scope.sh = $window.innerHeight;
+            alert($scope.sh);
+              if($scope.sh>$scope.sw){
+              $scope.wi = "{'height':'50%','width':'40%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+            }
+            else{
+              $scope.wi = "{'height':'10%','width':'10%','margin-top':'20%','margin-left':'20%','margin-right':'20%'}";
+            }
+            }
+            window.onresize = tellAngular;           
             })
 .controller('dashCtrl', function($scope, $http,$timeout, $ionicLoading,$ionicPopup) {
             
