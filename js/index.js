@@ -39,7 +39,7 @@ var app = {
     },
     
     onBackKeyDown: function(){
-            alert('back');
+            // alert('back');
             return false;
     },
     // Update DOM on a Received Event

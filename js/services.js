@@ -119,7 +119,7 @@ angular.module('starter.services', [])
          createDatabase();
          }
          function createDatabase() {
-        alert("Data Sync");
+        // alert("Data Sync");
          createDB.transaction(createfarm, errorHandler, successHandler);
          }
          function createfarm(tx)
@@ -132,7 +132,7 @@ angular.module('starter.services', [])
          tx.executeSql('CREATE TABLE IF NOT EXISTS farms (`farm_id` ,`fname`, `fsystem_status`, `fstreet_address`, `fcity`, `fstate`, `fpostal_code`)');
          tx.executeSql('CREATE TABLE IF NOT EXISTS sites (`location_id` ,`lname`, `lsystem_status`, `lstreet_address`, `lcity`, `lstate`, `lpostal_code`, `lfarm_id`)');
          tx.executeSql('CREATE TABLE IF NOT EXISTS barns (`barn_id` ,`bname`, `blocation_id`, `btotalpigs`)');
-         alert("db");
+         // alert("db");
          for (var index=0; index<farms.length; index++)
          {
          tx.executeSql('INSERT INTO farms (farm_id, fname, fsystem_status, fstreet_address, fcity, fstate, fpostal_code) VALUES (?, ?, ?, ?, ?, ?, ?)',
