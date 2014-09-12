@@ -55,20 +55,20 @@ angular.module('starter.controllers', ['ionic'])
            $scope.sw = $window.innerWidth;
             $scope.sh = $window.innerHeight;
            if($scope.sh>$scope.sw){
-              $scope.wi = "{'height':'40%','width':'50%','margin-top':'10%'}";
+              $scope.wi = "{'height':'50%','width':'35%','margin-top':'10%'}";
             }
             else{
-              $scope.wi = "{'height':'50%','width':'40%','margin-top':'10%'}";
+              $scope.wi = "{'height':'50%','width':'35%','margin-top':'10%'}";
             }
            function tellAngular() {
             $scope.sw = $window.innerWidth;
             $scope.sh = $window.innerHeight;
             // alert($scope.sh);
               if($scope.sh>$scope.sw){
-              $scope.wi = "{'height':'40%','width':'40%','margin-top':'10%'}";
+              $scope.wi = "{'height':'50%','width':'35%','margin-top':'10%'}";
             }
             else{
-              $scope.wi = "{'height':'50%','width':'40%','margin-top':'10%'}";
+              $scope.wi = "{'height':'50%','width':'35%','margin-top':'10%'}";
             }
             }
             window.onresize = tellAngular;
@@ -157,7 +157,7 @@ angular.module('starter.controllers', ['ionic'])
             }
             else{
               $scope.img = "{'height':'40%','width':'30%','margin-top':'20%','margin-left':'35%','margin-right':'35%'}";
-              $scope.lod = "{'height':'20%','width':'10%','margin-top':'10%','margin-left':'40%','margin-right':'40%'}";
+              $scope.lod = "{'height':'20%','width':'10%','margin-top':'10%','margin-left':'45%','margin-right':'45%'}";
             }
            function tellAngular() {
             $scope.sw = $window.innerWidth;
@@ -169,7 +169,7 @@ angular.module('starter.controllers', ['ionic'])
             }
             else{
               $scope.img = "{'height':'40%','width':'30%','margin-top':'20%','margin-left':'35%','margin-right':'35%'}";
-              $scope.lod = "{'height':'20%','width':'10%','margin-top':'10%','margin-left':'40%','margin-right':'40%'}";
+              $scope.lod = "{'height':'20%','width':'10%','margin-top':'10%','margin-left':'45%','margin-right':'45%'}";
             }
             }
             window.onresize = tellAngular;           

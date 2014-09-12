@@ -214,7 +214,7 @@ angular.module('starter.services', [])
                        {
                        fa1 = [];
                        var len = results.rows.length;
-                       alert(len + results);
+                       // alert(len + results);
                        for(var c=0; c<len; c++){
                        fa1.push(results.rows.item(c))
                        // alert(results.rows.item(c));
@@ -252,7 +252,7 @@ angular.module('starter.services', [])
          
          function successHandler()
          {
-            alert("done");
+            // alert("done");
          if(window.localStorage['role']=="BarnManager")
          {
          location.href = '#/app/barnmanager/'+window.localStorage['barn_id']+'/'+window.localStorage['barn_id']+'/'+window.localStorage['location']+'/'+window.localStorage['farm'];
