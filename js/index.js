@@ -34,9 +34,14 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        document.addEventListener('backbutton', this.onBackKeyDown, false);
         app.receivedEvent('deviceready');
     },
     
+    onBackKeyDown: function(){
+            alert('back');
+            return false;
+    },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
          var pushNotification = window.plugins.pushNotification;

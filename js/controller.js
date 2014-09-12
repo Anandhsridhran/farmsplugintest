@@ -125,7 +125,7 @@ angular.module('starter.controllers', ['ionic'])
                         $scope.tes = "Log In";
                         $scope.click = false;
                         $ionicPopup.alert({
-                                          title: data,
+                                          title: 'Invalid username or password',
                                           template: '',
                                           buttons:[{text:"OK",type:"button button-clear button-positive"}]
                                           
