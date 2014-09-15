@@ -153,7 +153,7 @@ angular.module('starter.controllers', ['ionic'])
             $scope.sh = $window.innerHeight;
            if($scope.sh>$scope.sw){
               $scope.img = "{'height':'28%','width':'40%','margin-top':'20%','margin-left':'30%','margin-right':'30%'}";
-              $scope.lod = "{'height':'13%','width':'20%','margin-top':'10%','margin-left':'40%','margin-right':'40%'}";
+              $scope.lod = "{'height':'12%','width':'20%','margin-top':'10%','margin-left':'40%','margin-right':'40%'}";
             }
             else{
               $scope.img = "{'height':'40%','width':'30%','margin-top':'20%','margin-left':'35%','margin-right':'35%'}";
@@ -165,7 +165,7 @@ angular.module('starter.controllers', ['ionic'])
             // alert($scope.sh);
               if($scope.sh>$scope.sw){
               $scope.img = "{'height':'28%','width':'40%','margin-top':'20%','margin-left':'30%','margin-right':'30%'}";
-              $scope.lod = "{'height':'13%','width':'20%','margin-top':'10%','margin-left':'40%','margin-right':'40%'}";
+              $scope.lod = "{'height':'12%','width':'20%','margin-top':'10%','margin-left':'40%','margin-right':'40%'}";
             }
             else{
               $scope.img = "{'height':'40%','width':'30%','margin-top':'20%','margin-left':'35%','margin-right':'35%'}";
