@@ -5,7 +5,7 @@
     <ion-nav-buttons side="right">
         <button class="button button-icon icon ion-ios7-arrow-back" ng-click="backlist()"></button>
     </ion-nav-buttons>
-    <div class="bar bar-subheader">
+    <ion-header-bar class="bar bar-subheader">
         <div style="float:left;">
             <button class="button button-icon icon ion-ios7-arrow-back" ng-click="bac_barn()" ng-disabled="baclas"></button>
         </div>
@@ -13,7 +13,7 @@
         <div style="float:right;">
             <button class="button button-icon icon ion-ios7-arrow-forward" ng-click="nex_barn()" ng-disabled="nexlas" ></button>
         </div>
-    </div>
+    </ion-header-bar>
     <ion-content class="has-header" style="background-color:rgb(131,155,207);margin-top:5%;" id= "bodybarn">
         <div style="height:20%">
             <div style="margin-top:8%;margin-left:5%;float:left;width:55%;font-size:18px;"><img ng-src='img/{{systemstatus}}1.png' style="margin-right:5px;float:left;">
