@@ -27,8 +27,9 @@
             </div>
         </div>
         <div style="border-bottom:1px solid white;width:90%;float:left;border-top:1px solid white;margin-left:5%;padding-top:3%;margin-top:3%;padding-bottom:5%;height:30%">
-            <span style="font-size:13px;float:left;color:white;">Feed :</span><img ng-src='img/{{read.ir_feeds}}1.png' style="float:left;margin-left:2%;"><br/>
-                <span style="font-size:15px;float:left;color:white;">AC Power : </span><img ng-src='img/{{read.AC_power}}1.png' style="float:left;margin-left:2%;"><br/>
+            <span style="font-size:15px;float:left;color:white;"> Methane :  {{read.AC_power}}</span>
+             <br/>
+             <span style="font-size:15px;float:left;color:white;">CO2 :  {{read.ir_feeds}} </span><br/>
                     <span style="font-size:13px;float:left;color:white;width:50%;">Current Inventory : {{total_inventory}}</span>
                     <span style="font-size:10px;float:left;color:white;width:50%;">{{report_date | date:'fullDate'}}</span>
                     <span style="font-size:13px;float:left;color:white;padding-left:15%;width:85%;padding-top:3%;">Dead Pigs : {{pig}}</span>

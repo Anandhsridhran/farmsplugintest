@@ -119,7 +119,7 @@ angular.module('starter.services', [])
          createDatabase();
          }
          function createDatabase() {
-        // alert("Data Sync");
+//         alert("Data Sync");
          createDB.transaction(createfarm, errorHandler, successHandler);
          }
          function createfarm(tx)
@@ -128,11 +128,18 @@ angular.module('starter.services', [])
          tx.executeSql('DROP TABLE IF EXISTS sites');
          tx.executeSql('DROP TABLE IF EXISTS barns');
          tx.executeSql('DROP TABLE IF EXISTS readings');
+         //AC power = methane
+         //Ir feeds = CO2 anantha have to change
          tx.executeSql('CREATE TABLE IF NOT EXISTS readings (`barn_id` ,`barn_name`, `temperatures`, `humidity`, `status`, `AC_power`, `ir_feeds`,`reported_at`)');
          tx.executeSql('CREATE TABLE IF NOT EXISTS farms (`farm_id` ,`fname`, `fsystem_status`, `fstreet_address`, `fcity`, `fstate`, `fpostal_code`)');
          tx.executeSql('CREATE TABLE IF NOT EXISTS sites (`location_id` ,`lname`, `lsystem_status`, `lstreet_address`, `lcity`, `lstate`, `lpostal_code`, `lfarm_id`)');
          tx.executeSql('CREATE TABLE IF NOT EXISTS barns (`barn_id` ,`bname`, `blocation_id`, `btotalpigs`)');
-         // alert("db");
+         //         tx.executeSql('Delete FROM farms',[]);
+         //         tx.executeSql('Delete FROM sites',[]);
+         //         tx.executeSql('Delete FROM barns',[]);
+         //         tx.executeSql('Delete FROM readings',[]);
+         //         tx.executeSql('CREATE TABLE IF NOT EXISTS barn_readings (`barn_id` ,`bname`, `btotalpigs`, `blocation_id`,``)');
+//         alert("1");
          for (var index=0; index<farms.length; index++)
          {
          tx.executeSql('INSERT INTO farms (farm_id, fname, fsystem_status, fstreet_address, fcity, fstate, fpostal_code) VALUES (?, ?, ?, ?, ?, ?, ?)',
@@ -153,10 +160,13 @@ angular.module('starter.services', [])
          
          for (var index=0; index<reading.length; index++)
          {
-
+         //         alert("1");
          var idb = ids[index];
          var data = reading;
-                 
+         //alert(JSON.stringify(data[index]))
+         //         alert(JSON.stringify(data[index].temperatures));
+         
+         //         alert(d);
          if (data[index] == "null" || data[index] == null || data[index] == undefined || data[index] == ""){
          var barn_name = "NA";
          var temperatures = "NA";
@@ -187,11 +197,11 @@ angular.module('starter.services', [])
          var system_status = data[index].system_status;
          }
          //         alert("2c");
-         if(data[index].AC_power == null || data[index].AC_power == undefined){
+         if(data[index].methane == null || data[index].methane == undefined){
          var AC_power = "NA";
          }
          else{
-         var AC_power = data[index].AC_power;
+         var AC_power = data[index].methane ;
          }
          if(data[index].reported_at == null || data[index].reported_at == undefined){
          var reported_at = "NA";
@@ -199,25 +209,25 @@ angular.module('starter.services', [])
          else{
          var reported_at = data[index].reported_at;
          }
-         if(data[index].ir_feeds == null || data[index].ir_feeds == undefined || data[index].ir_feeds[0] == undefined  ){
-         var ir_feeds = 0;
+         
+         if(data[index].co2 == null || data[index].co2 == undefined){
+            //|| data[index].co2[0] == undefined  ){
+         var ir_feeds = "NA";
          }
          else{
-         var ir_feeds = data[index].ir_feeds[0].value;
+         var ir_feeds = data[index].co2 ;
          }
+         
          }
          tx.executeSql('INSERT INTO readings (barn_id, barn_name, temperatures, humidity, status, AC_power, ir_feeds, reported_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
                        [idb,barn_name,temperatures,humidity,system_status,AC_power,ir_feeds,reported_at]);
-         // alert("rokie");
          }
          tx.executeSql('SELECT * FROM farms', [], function(tx,results)
                        {
                        fa1 = [];
                        var len = results.rows.length;
-                       // alert(len + results);
                        for(var c=0; c<len; c++){
                        fa1.push(results.rows.item(c))
-                       // alert(results.rows.item(c));
                        }
                        });
          tx.executeSql('SELECT * FROM sites', [], function(tx,results){
@@ -252,7 +262,6 @@ angular.module('starter.services', [])
          
          function successHandler()
          {
-            // alert("done");
          if(window.localStorage['role']=="BarnManager")
          {
          location.href = '#/app/barnmanager/'+window.localStorage['barn_id']+'/'+window.localStorage['barn_id']+'/'+window.localStorage['location']+'/'+window.localStorage['farm'];
