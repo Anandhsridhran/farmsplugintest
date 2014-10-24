@@ -196,7 +196,7 @@ angular.module('starter.services', [])
          else{
          var system_status = data[index].system_status;
          }
-                 alert(data[index].methane);
+                 // alert(data[index].methane);
          if(data[index].methane == null || data[index].methane == undefined){
          var AC_power = "NA";
          }
